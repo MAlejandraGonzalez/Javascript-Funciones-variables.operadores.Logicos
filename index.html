@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+
+    <script>
+
+        //FUNCIONES
+
+        //ARGUMENTOS
+        //PARAMETROS Y CUERPO DE LA FUNCION
+
+        function concatenarTresCadenas(cadena1 , cadena2 , cadena3){
+
+            console.log(cadena1 + " "+ cadena2 + " " + cadena3) ; 
+
+            concatenarTresCadenas("Estoy" ,"aprendiendo","Javascript" );
+
+
+
+        }
+        
+        //Los valores que les pasamos a los parametros se denominan argumentos
+
+        //Ambito Global 
+
+        // Tenemos dos tipos principales de variables VARIABLES GLOBALES , Y VARIABLES LOCALES 
+
+        var miVariableGlobal = 5;
+
+        console.log(miVariableGlobal);
+
+        function miFuncion (){
+
+            console.log(miVariableGlobal);
+        }
+
+        //AMBITO LOCAL
+
+        function miFuncion (){
+
+            console.log(miVariableLocal);
+        }
+
+        //AMBITO LOCAL VS AMBITO GLOBAL 
+
+        var miNombre = "Alejandra" ;
+
+        function mostrarMiNombre() {
+
+            var miNombre = "Miriam";
+            console.log(miNombre);
+        }
+
+        mostrarMiNombre();
+
+        //LA VARIABLE LOCAL TIENE MAYOR PRIORIDAD 
+
+        console.log(miNombre);
+
+        //RETORNAR UN VALOR 
+
+        function sumar (a,b) {
+
+            return a + b ;
+        }
+
+        sumar ((5 , 3) ); 
+        
+        console.log(sumar(5 , 3));
+
+        //UNDEFINED
+
+        function sumar(a , b){
+
+            console.log(a + b);
+        }
+
+        //ASIGNAR UN VALOR RETORNADO
+
+        function sumar (a,b) {
+
+            return a + b;
+        }
+
+        var resultado = sumar(5 , 3);
+
+        function crearCadenaConMeta(LenguajedeProgramacion){
+
+
+            return "Mi meta es aprender" + LenguajedeProgramacion;
+        }
+
+       var miMeta = crearCadenaConMeta("Javascript");
+
+       console.log(miMeta);
+
+       //PERMANECE EN FILA 
+
+       //Define una funcion ProximoEnlaFila que tome un arreglo (arreglo) y un numero (elemento) como argumentos
+       //Agrega el numero al final del arreglo y luego eliminar el primer elemento del arreglo . La funcion ProximoEnlaFila
+       //debe retornar el elemento que fue removido 
+
+       function proximoEnLaFila (arreglo , elemento) {
+
+        arreglo.push(elemento); //Agregar al final del arreglo
+        return arreglo.shift();        //Remover el  primer elemento 
+    
+    }
+
+    var miArreglo = [1 , 2 , 3 , 4 , 5];
+
+    console.log("Antes: " +JSON.stringify(miArreglo));
+
+    console.log(proximoEnLaFila(miArreglo, 6 ));
+
+    console.log("Despues: " +JSON.stringify(miArreglo));
+
+    //VALORES BOOLEANOS
+
+    //TRUE  FALSE 
+
+
+    //OPERADOR DE IGUALDAD 
+
+    console.log(6 == 5);
+
+    console.log("Hola"=="Hola");
+
+    //OPERADOR DE IGUALDAD ESTRICTA 
+
+    console.log(9==9);
+    console.log(9 == "9");
+
+    console.log(9 === 9);
+    console.log(9 === "9");
+
+
+    //PRACTICA COMO COMPARAR VALORES 
+
+    var a;
+    var b;
+
+    a = 5;
+    b = 5;
+
+    console.log(a == b); //true 
+    console.log(a === b);
+
+    b = 8;
+    console.log(a == b);
+
+    b = "5";
+
+    console.log(a == b); //TRUE 
+    console.log (a === b); //FALSE 
+
+    a = "javascript";
+    b = "javascript";
+
+    console.log(a == b); //TRUE 
+    console.log (a === b); //true
+
+    //OPERADOR DE DESIGUALDAD 
+
+    console.log(9 != 6);  //TRUE 
+    console.log( 9 != 9); //FALSE 
+
+    console.log("Javascript" != "Javascript"); //FALSO PORQUE SON IGUALES 
+
+    console.log([1 , 2 , 3 , 4] != [1 , 2 , 3 , 4]);
+
+    //OPERADOR DE DESIGUALDAD ESTRICTA 
+
+    console.log(1 !== "1");
+
+    //OPERADOR MAYOR QUE 
+
+    console.log(6 > 5); //TRUE 
+    console.log (3 > 10) //FALSE 
+
+    console.log("B" > "A"); //TRUE 
+    console.log("ACB" > "ABC"); //TRUE 
+
+    console.log("AB" > "A"); //true 
+
+    var a = 15;
+    var b = 7;
+
+    console.log(a > b); //TRUE 
+
+    console.log(b > a); //FALSE 
+
+    //OPERADOR MAYOR O IGUAL QUE 
+
+    console.log(5 >= 5); //true
+
+    console.log(5 < 5); //false
+
+    //OPERADOR MENOR QUE 
+
+    console.log(5 < 6); //true
+    console.log(10 < 3); //FALSE 
+
+    console.log("A" < "B"); //TRUE 
+    console.log("ABC" < "ACB"); //TRUE 
+
+    var a = 15;
+    var b = 7;
+
+    console.log(a < b); //FALSE 
+    console.log(b < a);  //TRUE 
+
+    //operador menor o igual que 
+
+    console.log(5 < 5); //False 
+    console.log(5 <= 5); //TRUE 
+
+    //OPERADOR LOGICO "and"
+
+    //Con el operador and la expresion solo es verdadera cuando ambos operandos son verdaderos.
+
+    //LAS DISTINTAS COMBINACIONES 
+
+    console.log(true && true);
+    console.log(true && false);
+    console.log(false && true);
+    console.log(false && false);
+
+    var a = 8;
+
+    console.log ((a > 5) && (a < 10)); //ESTA EXPRESION ES VERDADERA
+    
+    
+     var a = 3;
+
+      console.log ((a > 5) && (a < 10)); //ESTA EXPRESION ES FALSA
+
+      //OPERADOR LOGICO "OR"
+
+      //LA EXPRESION ES VERDADERA SI ALGUNO DE LOS DOS OPERANDOS O AMBOS SON VERDADEROS 
+
+    console.log(true || true);
+    console.log(true || false);
+    console.log(false || true);
+    console.log(false || false);
+
+    var a = 8;
+
+    console.log((a < 5) || (a > 15)); //ESTA EXPRESION ES FALSA 
+
+    var a = 2;
+
+     console.log((a < 5) || (a > 15));
+
+     //OPERADOR LOGICO "NOT"
+
+     console.log( !true); //FALSE 
+    console.log( !false); //TRUE 
+
+    var a = 8;
+
+    console.log(!(a > 5));
+
+     console.log(!(a < 5));
+
+
+
+
+
+            
+
+
+
+
+        
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
